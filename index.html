@@ -1,14 +1,19 @@
 <html>
-<body onload="javascript:test_frame.submit()">
-
-<iframe name="workflow_view"  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"  width="100%" height='100%' frameborder='0'></iframe> 
+<head>
 <script>
-
+function load() {
+    var postdata = '<form id=dynForm method=POST action=\'https://cwinsmpiv.cert.motive.com/csc/j_security_check?j_username=workflowuser&j_password=workflowuser1\'>' +
+                    '</form>';
+    top.frames[0].document.body.innerHTML=postdata;
+    top.frames[0].document.getElementById('dynForm').submit();
+}
 </script>
-  <p>Your browser does not support iframes.</p>
-</iframe>
-<form name="test_frame" method="POST" action="https://cwinsmpiv.cert.motive.com/csc/j_security_check?j_username=workflowuser&j_password=workflowuser1" target="workflow_view">
-</form>
+</head>
+<body onload="load()">
+ 
+< iframe src="about:blank" id="noreferer">< /iframe>
+ 
+ 
 </body>
 </html>
 
