@@ -2,7 +2,7 @@
 <head>
 <script>
 function load() {
-    var postdata = '<form id=dynForm method=POST action=https://cwinsmpiv.cert.motive.com/csc/j_security_check?j_username=workflowuser&j_password=workflowuser1</form>';
+    var postdata = '<form id=dynForm method=POST action=https://cwinsmpiv.cert.motive.com/csc/j_security_check?j_username=workflowuser&j_password=workflowuser1></form>';
     top.frames[0].document.body.innerHTML=postdata;
     top.frames[0].document.getElementById('dynForm').submit();
 }
